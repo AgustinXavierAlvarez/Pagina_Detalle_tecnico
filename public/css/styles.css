@@ -15,6 +15,7 @@ body{
     background-color: var(--oscuro);
     display:flex;
     height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -47,6 +48,7 @@ nav{
     align-items: center;
     height: 100%;
     overflow-y:auto;
+    overflow-x: hidden;
 }
 
 nav header label{
@@ -56,30 +58,73 @@ nav header label{
 }
 
 
-nav ul{
-    display:block;
+nav #nav-marcas{
     margin-top:4vw;
 }
 
-nav li{
-    display: block;
-    padding:10% 0px;
+nav .marcas{
+    font-size:1.4vw;
+    display: flex;
+    padding:6% 0px;
     border-top:solid 1px gray;
     flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 nav a{
     margin-left: 5%;
+    
     color: gray;
 }
 
-nav li:hover{
-    overflow: unset;
-    transform: scale(1.5);
-    left: 10%;
-    font-size: 2vw;
-    color:gray ;
+nav .marcas:hover {
+    animation-name: Menu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
+.marcas ul{
+    width: 35%;
+    font-size: 1vw;
+    display: none;
+}
+
+.marcas:hover ul{
+    display: flex;
+    flex-direction: column;
+    animation-name: options;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.marcas ul li{
+    width: 100%;
+}
+@keyframes options {
+    0%{
+
+        opacity: 0;
+    }
+    100%{
+        
+        opacity: 100%;
+    }
+
+}
+@keyframes Menu {
+    50%{
+        padding:8% 0px;
+        font-size: 1.5vw;
+        transform: translateX(-2vw);
+    }
+    100%{
+        padding:10% 0px;
+        font-size: 2vw;
+        padding-right:2vw;
+        background-color:rgba(125, 157, 156, 0.5) ;
+    }
+}
+
 
 /*Menu lateral*/
 /*Menu Main*/
@@ -108,6 +153,9 @@ article img{
 
 article h4{
     margin:2% 0px;
+}
+main h1,main h2{
+    text-align: center;
 }
 
 /*Menu Main*/
