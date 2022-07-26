@@ -15,6 +15,7 @@ body{
     background-color: var(--oscuro);
     display:flex;
     height: 100%;
+    background-color: var(--verdeazul);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 ::-webkit-scrollbar {
@@ -135,6 +136,7 @@ main{
     margin-right: 4%;
     display: flex;
     flex-direction: column;
+    background-color: var(--oscuro);
 }
 
 main article{
@@ -148,7 +150,7 @@ main article b,main article p{
 article img{
     width: 80%;
     padding:4% 0px;
-    justify-content: center;
+    margin: 0px 6vw;
 }
 
 article h4{
