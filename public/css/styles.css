@@ -63,7 +63,7 @@ nav #nav-marcas{
     margin-top:4vw;
 }
 
-nav .marcas{
+nav .nav-link{
     font-size:1.4vw;
     display: flex;
     padding:6% 0px;
@@ -78,53 +78,56 @@ nav a{
     
     color: gray;
 }
-
-nav .marcas:hover {
-    animation-name: Menu;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-.marcas ul{
-    width: 35%;
-    font-size: 1vw;
-    display: none;
-}
-
-.marcas:hover ul{
-    display: flex;
-    flex-direction: column;
-    animation-name: options;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.marcas ul li{
-    width: 100%;
-}
-@keyframes options {
-    0%{
-
-        opacity: 0;
+@media (min-width:791px) {
+    nav .nav-link:hover {
+        animation-name: Menu;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
-    100%{
-        
-        opacity: 100%;
+    .nav-link ul{
+        width: 35%;
+        font-size: 1vw;
+        display: none;
     }
+    
+    .nav-link:hover ul{
+        display: flex;
+        flex-direction: column;
+        animation-name: options;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    
+    .nav-link ul li{
+        width: 100%;
+    }
+    @keyframes options {
+        0%{
+    
+            opacity: 0;
+        }
+        100%{
+            
+            opacity: 100%;
+        }
+    
+    }
+    @keyframes Menu {
+        50%{
+            padding:8% 0px;
+            font-size: 1.5vw;
+            transform: translateX(-2vw);
+        }
+        100%{
+            padding:10% 0px;
+            font-size: 2vw;
+            padding-right:2vw;
+            background-color:rgba(125, 157, 156, 0.5) ;
+        }
+    }
+    
+}
 
-}
-@keyframes Menu {
-    50%{
-        padding:8% 0px;
-        font-size: 1.5vw;
-        transform: translateX(-2vw);
-    }
-    100%{
-        padding:10% 0px;
-        font-size: 2vw;
-        padding-right:2vw;
-        background-color:rgba(125, 157, 156, 0.5) ;
-    }
-}
 
 
 /*Menu lateral*/
@@ -139,21 +142,21 @@ main{
     background-color: var(--oscuro);
 }
 
-main article{
+main section{
     display: block;
     margin:5% 0px;
 }
-main article b,main article p{
+main section b,main section p{
     display: block;
 }
 
-article img{
+section img{
     width: 80%;
     padding:4% 0px;
     margin: 0px 6vw;
 }
 
-article h4{
+section h4{
     margin:2% 0px;
 }
 main h1,main h2{
@@ -161,3 +164,145 @@ main h1,main h2{
 }
 
 /*Menu Main*/
+@media (max-width:790px) {
+    #navbar{
+        display: flex;
+        border: 0px;
+        border-bottom: solid 2px var(--verdeazul);
+        flex-direction: column;
+        height: 15%;
+        width: 100%;
+        overflow-y: hidden
+    }
+    #navbar header{
+        width: 40%;
+        height: 100%;
+        flex-grow: 1;
+    }
+
+    #navbar li{
+        border:0px;
+        height: 100%;
+    }
+
+    #navbar header label{
+        display: block;
+        width: 100%;
+        font-size: 4vw;
+    }
+
+    #nav-marcas{
+        flex-grow: 1;
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+    .nav-link{
+        padding: 0%;
+    }
+
+    .nav-link a{
+        font-size: 3vw;
+    }
+
+    .nav-link li {
+        display: none;
+    }
+    /*Main*/
+    main{
+        margin: 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--oscuro);
+    }
+    section img{
+        width: 100%;
+        padding:4% 0px;
+        margin: 0px ;
+    }
+
+}
+
+@media (max-width:400px) {
+    body{
+        display: contents;
+    }
+    main{
+        margin: 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--oscuro);
+    }
+    nav{
+        position:relative;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        overflow-y:hidden;
+        overflow-x: hidden;
+    }
+    #nav-marcas{
+        display: none;
+        animation-name: menu-iterative;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    #navbar:hover #nav-marcas{
+        animation-name: menu-iterative;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #navbar:hover .nav-link{
+        animation-name: menu-iterative;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        justify-content: center;
+        font-size: 5vw;
+        padding: 0%;
+    }
+    .nav-link:hover ul{
+        margin :2% 0px;
+        font-size: 3.5vw;
+        animation-name: moto-options;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes menu-iterative {
+        0%{
+            padding:1% 0%;
+            display: contents;
+        }
+        100%{
+            padding:3% 0%;
+        }
+    }
+
+    @keyframes moto-options {
+        0%{
+            opacity: 0%;
+        }
+        100%{
+            opacity: 100%;
+        }
+    }
+    
+    #navbar header label{
+        font-size: 8vw;
+    }
+    /*MAIN*/
+    section img{
+        width: 100%;
+        padding:4% 0px;
+        margin: 0px ;
+    }
+}
