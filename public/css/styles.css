@@ -182,6 +182,7 @@ main h1,main h2{
 
     #navbar li{
         border:0px;
+        padding: 0%;
         height: 100%;
     }
 
@@ -245,6 +246,10 @@ main h1,main h2{
         flex-direction: column;
         overflow-y:hidden;
         overflow-x: hidden;
+    }
+    #navbar li {
+        font-size: 3vw;
+        border-top: solid 1px var(--verdeazul);
     }
     #nav-marcas{
         display: none;
