@@ -67,6 +67,7 @@ nav .nav-link{
     font-size:1.4vw;
     display: flex;
     padding:6% 0px;
+    padding-left: 5%;
     border-top:solid 1px gray;
     flex-grow: 1;
     flex-wrap: wrap;
@@ -74,8 +75,6 @@ nav .nav-link{
 }
 
 nav a{
-    margin-left: 5%;
-    
     color: gray;
 }
 @media (min-width:791px) {
@@ -120,6 +119,7 @@ nav a{
         }
         100%{
             padding:10% 0px;
+            padding-left: 5%;
             font-size: 2vw;
             padding-right:2vw;
             background-color:rgba(125, 157, 156, 0.5) ;
